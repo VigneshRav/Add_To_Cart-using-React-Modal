@@ -1,12 +1,12 @@
 import React from "react";
 
 const CartModal = ({ cart, closeModal, removeFromCart }) => {
-  console.log("modal");
-
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-6 rounded-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
+    <div className="fixed inset-0 bg-cyan-200 flex justify-center items-center">
+      <div className="bg-white p-6 rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto scrollbar-hide">
+        <h2 className="text-2xl font-extrabold mb-8 font-serif text-orange-900">
+          Your Cart 🛒
+        </h2>
         {cart.length === 0 ? (
           <img
             src="https://www.vinsolutions.com/wp-content/uploads/sites/2/vinsolutions/media/Vin-Images/news-blog/Empty_Shopping_Cart_blog.jpg"
@@ -17,17 +17,31 @@ const CartModal = ({ cart, closeModal, removeFromCart }) => {
           <ul>
             {cart.map((item) => {
               return (
-                <li key={item.id} className="mb-4 flex justify-between">
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.price}</p>
+                <li key={item.id} className="mb-12 flex justify-between">
+                  <div className="flex gap-10 w-full shadow-2xl">
+                    <img
+                      src={item.image}
+                      alt="Product Image"
+                      className="h-40 w-1/2 object-contain mb-2"
+                    />
+
+                    <div>
+                      <h3 className="text-blue-800 font-bold pt-4 pb-2 text-start">
+                        {item.title}
+                      </h3>
+                      <p className="text-red-500 font-bold pb-6">
+                        Price: ${item.price}
+                      </p>
+                      <div className="text-end mr-2 mb-2">
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="bg-gray-900 text-white px-3 py-1 rounded hover:bg-red-600 cursor-pointer"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-purple-600"
-                  >
-                    Remove
-                  </button>
                 </li>
               );
             })}
@@ -35,7 +49,7 @@ const CartModal = ({ cart, closeModal, removeFromCart }) => {
         )}
         <button
           onClick={closeModal}
-          className="bg-gray-800 text-white mt-4 px-4 py-2 rounded hover:bg-red-500"
+          className="bg-amber-900 text-white mt-4 px-4 py-2 rounded hover:bg-red-600 cursor-pointer"
         >
           Close
         </button>

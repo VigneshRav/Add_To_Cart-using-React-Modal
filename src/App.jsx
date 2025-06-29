@@ -23,7 +23,7 @@ const App = () => {
   };
 
   const addToCart = (product) => {
-    const productInCart = find((item) => item.id === product.id);
+    const productInCart = cart.find((item) => item.id === product.id);
     if (productInCart) {
       alert("Item already added to the cart");
     } else {

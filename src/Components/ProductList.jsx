@@ -3,8 +3,8 @@ import ProductItem from "./ProductItem";
 
 const ProductList = ({ products, addToCart }) => {
   return (
-    <div className="">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="bg-cyan-900">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
         {products.map((product) => (
           <ProductItem
             key={product.id}
