@@ -37,7 +37,7 @@ const CartModal = ({ cart, closeModal, removeFromCart }) => {
                           onClick={() => removeFromCart(item.id)}
                           className="bg-gray-900 text-white px-3 py-1 rounded hover:bg-red-600 cursor-pointer"
                         >
-                          Remove
+                          Remove from cart
                         </button>
                       </div>
                     </div>
