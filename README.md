@@ -1,4 +1,4 @@
-🛒 Add to Cart Using React Modal
+## 🛒 Add to Cart Using React Modal
 
 A simple and responsive ReactJS application that fetches product data from the Fake Store API, displays them in a card layout, and allows users to add or remove products from a shopping cart via a modal interface.
 
