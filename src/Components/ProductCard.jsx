@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductCard = ({ product, addToCart }) => {
   return (
-    <div className="p-4 rounded-lg border flex flex-col transition shadow-lg shadow-cyan-200">
+    <div className="p-4 rounded-lg border-1 border-sky-600 flex flex-col hover:scale-102 transition shadow-lg shadow-sky-200">
       <h2 className="text-2xl font-sans italic font-bold pb-4">
         {product.category}
       </h2>
@@ -20,7 +20,7 @@ const ProductCard = ({ product, addToCart }) => {
       <h3 className="text-red-600 py-2 font-bold">Price: ${product.price}</h3>
 
       <button
-        className="bg-gray-800 font-semibold text-white flex justify-evenly mt-auto py-2 mb-0 gap-2 rounded hover:bg-red-600 cursor-pointer"
+        className="bg-violet-950 font-semibold text-white flex justify-evenly mt-auto py-2 mb-0 gap-2 rounded hover:bg-red-600 cursor-pointer"
         onClick={() => addToCart(product)}
       >
         Add to Cart
