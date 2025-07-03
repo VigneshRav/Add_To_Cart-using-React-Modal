@@ -1,8 +1,8 @@
 import React from "react";
 
-const ProductItem = ({ product, addToCart }) => {
+const ProductCard = ({ product, addToCart }) => {
   return (
-    <div className="p-4 shadow-lg rounded-lg border flex flex-col">
+    <div className="p-4 rounded-lg border flex flex-col transition shadow-lg shadow-cyan-200">
       <h2 className="text-2xl font-sans italic font-bold pb-4">
         {product.category}
       </h2>
@@ -29,4 +29,4 @@ const ProductItem = ({ product, addToCart }) => {
   );
 };
 
-export default ProductItem;
+export default ProductCard;
